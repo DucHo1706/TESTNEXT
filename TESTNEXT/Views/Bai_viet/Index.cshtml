@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TESTNEXT.Models.Bai_viet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TieuDe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoiDung)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hinh_Anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thoi_Gian_Tao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Danh_Muc.TenDanhMuc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.UserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TieuDe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoiDung)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hinh_Anh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thoi_Gian_Tao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Danh_Muc.TenDanhMuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.UserName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BaiVietID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BaiVietID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BaiVietID })
+        </td>
+    </tr>
+}
+
+</table>
